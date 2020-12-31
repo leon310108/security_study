@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Shanghai
+    username: root
+    password: 12345678
+  jpa:
+    hibernate:
+      ddl-auto:  update
+    show-sql:  true
+  jackson:
+    serialization: 
+      indent-output: true
+logging:
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} -%msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} -%msg%n"
+  file:
+    path: d:/mylog
+    name: sys.log
+  level:
+    root: warn 
+  logback:
+    rollingpolicy:
+      file-name-pattern: "%d{yyyy-MM-dd}.log"
